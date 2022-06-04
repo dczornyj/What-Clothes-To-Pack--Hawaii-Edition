@@ -1,3 +1,4 @@
+from asyncio import start_server
 import numpy as np
 
 import sqlalchemy
@@ -47,8 +48,6 @@ def Greetings():
 
     )
 
-#   * List all routes that are available.
-
 # * `/api/v1.0/precipitation`
 
 #   * Convert the query results to a dictionary using `date` as the key and `prcp` as the value.
@@ -56,6 +55,22 @@ def Greetings():
 #   * Return the JSON representation of your dictionary.
 
 @app.route("/api/v1.0/precipitation")
+def rain():
+    session=Session(engine)
+
+    rain_by_date= session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= '2016-08-23')
+
+    session.close()
+
+    rain_latestyear=[]
+    for date, prcp in rain_by_date:
+        rain_dictionary={}
+        rain_dictionary["date"] = date
+        rain_dictionary["prcp"] = prcp
+        rain_latestyear.append(rain_dictionary)
+    
+    return jsonify(rain_latestyear)
+
 
 
 # * `/api/v1.0/stations`
@@ -98,6 +113,38 @@ def temp():
 
  
 
+@app.route("/api/v1.0/<start>")
+def start_temp(start):
+    session=Session(engine)
+
+    #   * When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
+    specific_day_temp_stats=session.query(func.min(Measurement.tobs),func.avg(Measurement.tobs),func.max(Measurement.tobs))\
+    .filter(Measurement.date >=start).all()
+
+    session.close()
+
+    temps_pickday=list(np.ravel(specific_day_temp_stats))
+
+    return jsonify(temps_pickday)
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+# @app.route("/api/v1.0/start/end")
 
 
 # * `/api/v1.0/<start>` and `/api/v1.0/<start>/<end>`
