@@ -112,13 +112,13 @@ def temp():
     return jsonify(all_days_temp)
 
  
-
+#   * When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
 @app.route("/api/v1.0/<start>")
 def start_temp(start):
     session=Session(engine)
 
-    #   * When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
-    specific_day_temp_stats=session.query(func.min(Measurement.tobs),func.avg(Measurement.tobs),func.max(Measurement.tobs))\
+    
+    specific_day_temp_stats=session.query(Measurement.date,func.min(Measurement.tobs),func.avg(Measurement.tobs),func.max(Measurement.tobs))\
     .filter(Measurement.date >=start).all()
 
     session.close()
@@ -126,6 +126,75 @@ def start_temp(start):
     temps_pickday=list(np.ravel(specific_day_temp_stats))
 
     return jsonify(temps_pickday)
+
+
+#   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive (>= & <=).
+
+@app.route("/api/v1.0/<start>/<end>")
+def end_to_start(start,end):
+    session=Session(engine)
+
+    date_interval_stats=session.query(func.min(Measurement.tobs),func.avg(Measurement.tobs),func.max(Measurement.tobs))\
+    .filter(Measurement.date >=start).filter(Measurement.date<=end).all()
+
+    session.close()
+    
+    user_picks_dates=list(np.ravel(date_interval_stats))
+
+    return jsonify(user_picks_dates)
+
+    #   * Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
+
+@app.route("/api/v1.0/<start>")
+@app.route("/api/v1.0/<start>/<end>")
+def input(start=None, end=None):
+    session=Session(engine)
+
+    if not end:
+        only_start_andgreater=session.query(func.min(Measurement.tobs),func.avg(Measurement.tobs),func.max(Measurement.tobs))\
+        .filter(Measurement.date >=start).all()
+        
+        only_start_andgreater_stats=list(np.ravel(only_start_andgreater))
+
+        return jsonify(only_start_andgreater_stats)
+
+    start_and_end=session.query(func.min(Measurement.tobs),func.avg(Measurement.tobs),func.max(Measurement.tobs))\
+    .filter(Measurement.date >=start).filter(Measurement.date<=end).all()
+
+    start_and_end_stats=list(np.ravel(start_and_end))
+
+    return jsonify(start_and_end_stats)
+
+    session.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #only start
+    only_start=session.query(func.min(Measurement.tobs),func.avg(Measurement.tobs),func.max(Measurement.tobs))\
+    .filter(Measurement.date==start).all()
+
+
+
+    #start to end
+    start_to_end=session.query(func.min(Measurement.tobs),func.avg(Measurement.tobs),func.max(Measurement.tobs))\
+    .filter(Measurement.date>start).filter(Measurement.date<end).all()
+
+
+
+
+
 
 
 
