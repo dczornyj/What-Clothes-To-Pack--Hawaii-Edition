@@ -1,6 +1,4 @@
-# sqlalchemy-challenge
-
-Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do.
+# What Clothes Should I pack?- Hawaii
 
 ## Step 1 - Climate Analysis and Exploration
 
@@ -14,13 +12,10 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
 
 * Link Python to the database by creating an SQLAlchemy session.
 
-* **Important** Don't forget to close out your session at the end of your notebook.
 
-### Precipitation Analysis
+Find the most recent date in the data set.
 
-* Start by finding the most recent date in the data set.
-
-* Using this date, retrieve the last 12 months of precipitation data by querying the 12 preceding months of data. **Note** you do not pass in the date as a variable to your query.
+* Using this date, retrieve the last 12 months of precipitation data by querying the 12 preceding months of data.
 
 * Select only the `date` and `prcp` values.
 
