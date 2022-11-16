@@ -36,10 +36,26 @@ Now that you have completed your initial analysis, design a Flask API based on t
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   
   # Screenshots
+  
+![sql alchemy imports](https://user-images.githubusercontent.com/101612220/202082472-592a0007-4e87-4bae-8751-0d72ca385aea.png)
 
 
+![sqlalchemy mostrecent](https://user-images.githubusercontent.com/101612220/202082537-dd91b556-3f93-4dac-8203-ec7a96d5f0b3.png)
+
+-Precipitation (inches vs. Date)
+![sqlalchemy precipbar](https://user-images.githubusercontent.com/101612220/202082564-a645516a-cdf3-428f-8246-7da6c3e8cf31.png)
+
+-Hawaii Climate Summary Statistics
+![sqlalchemy sumstats](https://user-images.githubusercontent.com/101612220/202082583-43cbd0f5-5c04-4a5c-9c7a-dbf24f635a37.png)
+
+-List of Climate Stations
+![sqlalchemy list stations](https://user-images.githubusercontent.com/101612220/202082642-0279429c-e210-4dd6-9ffc-df14ae3aaaf8.png)
+
+-Binning for Histogram
+![sqlalchemy binning4his](https://user-images.githubusercontent.com/101612220/202082677-6b00dffa-0ec5-4598-9837-01725757f147.png)
+
+-Number of Days vs. Temperature Histogram
 ![sqlalchemy challenge histo](https://user-images.githubusercontent.com/101612220/202082007-c9f6f8b9-6b1e-4128-ae54-ffdc44a2a32a.png)
-
 
 
 
