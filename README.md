@@ -2,7 +2,7 @@
 
 It's been a strenuous last couple of months at work and you decide to preliminarily start planning a future vacation to Hawaii. Upon the first week of thinking about the trip, you check your wardrobe to make sure you have a raincoat as you have become aware that it rains quite often in Hawaii. This thought then spurs you to investigate further into how the temperature and precipitation levels varied within the past year in order to plan for what to expect and what clothes to pack depending on what part of the year you take your vacation there. Use the sql lite database that is found within this repository to analyze the climate conditions in Hawaii. 
 
-## Initial Exploration
+## Initial Exploration (DC_CODE.ipynb file in root folder of repository)
 
 -Find the most recent date in the data set.
 
@@ -18,7 +18,7 @@ It's been a strenuous last couple of months at work and you decide to preliminar
 
 -Using the most active station id, calculate the lowest, highest, and average temperature.
 
-# Climate App
+# Climate App (app.py file in root folder of repository)
 
 Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 
