@@ -55,31 +55,38 @@ Now that you have completed your initial analysis, design a Flask API based on t
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## List of Climate Stations
+
 ![sqlalchemy list stations](https://user-images.githubusercontent.com/101612220/202082642-0279429c-e210-4dd6-9ffc-df14ae3aaaf8.png)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Binning for Histogram
-![sqlalchemy binning4his](https://user-images.githubusercontent.com/101612220/202082677-6b00dffa-0ec5-4598-9837-01725757f147.png)
+
+![sqlalchemy challenge histo](https://user-images.githubusercontent.com/101612220/202085131-85bdbb04-ca7f-4ed3-9666-3107ed9974a2.png)
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Number of Days vs. Temperature Histogram
+
 ![sqlalchemy challenge histo](https://user-images.githubusercontent.com/101612220/202082007-c9f6f8b9-6b1e-4128-ae54-ffdc44a2a32a.png)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Home Route for Flask App
+
 ![Screenshot (214)](https://user-images.githubusercontent.com/101612220/202084871-f73a2a59-e52e-4209-ba6a-f89e53233e1f.png)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Precipitation recorded on first few days
+
 ![sql alch precip recorded first few days](https://user-images.githubusercontent.com/101612220/202084411-00bae390-0955-42da-bbae-89784ce6b944.png)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Minimum temperature, average temperature, and maximum temperature, between 2016-09-12 & 2017-04-12. 
+## Minimum temperature, average temperature, and maximum temperature, between 2016-09-12 & 2017-04-12.
+
 ![aqlalch temp stats 912412](https://user-images.githubusercontent.com/101612220/202084398-76cbeba4-58c8-4330-bfdd-d3d3469da20c.png)
 
 
