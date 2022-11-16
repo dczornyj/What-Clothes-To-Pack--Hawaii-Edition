@@ -67,12 +67,6 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Number of Days vs. Temperature Histogram
-
-![sqlalchemy challenge histo](https://user-images.githubusercontent.com/101612220/202082007-c9f6f8b9-6b1e-4128-ae54-ffdc44a2a32a.png)
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 ## Home Route for Flask App
 
 ![Screenshot (214)](https://user-images.githubusercontent.com/101612220/202084871-f73a2a59-e52e-4209-ba6a-f89e53233e1f.png)
